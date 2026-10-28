@@ -2,12 +2,12 @@
     --bg-dark: #08030c;
     --bg-card: #13041a;
     --bg-glass: rgba(19, 4, 26, 0.85);
-    --accent-red: #ff003c;
-    --accent-pink: #cc0052;
-    --accent-burgundy: #660022;
-    --accent-gold: #d4af37;
+    --accent-red: #FF4D8D;       /* Vermelho/Rosa Néon Vibrante WCAG AA */
+    --accent-pink: #FF4D8D;      /* Unificado para o mesmo tom vibrante */
+    --accent-cyan: #00f0ff;      /* Ciano Neon em harmonia com a Logo */
+    --accent-silver: #e2e8f0;    /* Prata Metalizado estilo Cromo */
     --text-light: #f5edf8;
-    --text-muted: #a392ad;
+    --text-muted: #b8a6c4;
     --border-color: #2b0c36;
     --radius: 6px;
 }
@@ -16,7 +16,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Rajdhani', 'Inter', sans-serif;
+    font-family: 'Rajdhani', sans-serif;
 }
 
 html {
@@ -26,8 +26,8 @@ html {
 body {
     background-color: var(--bg-dark);
     background-image: 
-        radial-gradient(circle at 15% 15%, rgba(102, 0, 34, 0.3) 0%, transparent 45%),
-        radial-gradient(circle at 85% 85%, rgba(255, 0, 60, 0.15) 0%, transparent 50%);
+        radial-gradient(circle at 15% 15%, rgba(255, 77, 141, 0.25) 0%, transparent 45%),
+        radial-gradient(circle at 85% 85%, rgba(0, 240, 255, 0.1) 0%, transparent 50%);
     background-attachment: fixed;
     color: var(--text-light);
     line-height: 1.6;
@@ -63,15 +63,17 @@ a {
 }
 
 .logo {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 1.1rem;
-    font-weight: 500;
-    letter-spacing: 3px;
-    color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
 }
 
-.logo span {
-    color: var(--accent-red);
+.logo-img {
+  height: 34px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 0 8px rgba(0, 240, 255, 0.3));
 }
 
 .nav-menu {
@@ -80,7 +82,9 @@ a {
 }
 
 .nav-menu a {
-    font-size: 0.85rem;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
     text-transform: uppercase;
     letter-spacing: 2px;
     color: var(--text-muted);
@@ -88,28 +92,32 @@ a {
 }
 
 .nav-menu a:hover {
-    color: var(--accent-red);
+    color: var(--accent-cyan);
 }
 
-.btn-gold {
-    background: linear-gradient(135deg, var(--accent-gold), #99750c);
-    color: #000;
-    font-family: 'Orbitron', sans-serif;
-    font-weight: 700;
+/* BOTÃO ESTILO CROMO / CIANO METALIZADO */
+.btn-chrome {
+    background: linear-gradient(135deg, var(--accent-silver) 0%, var(--accent-cyan) 100%);
+    color: #08030c;
+    font-family: 'Audiowide', cursive;
     font-size: 0.75rem;
-    padding: 10px 20px;
+    padding: 11px 22px;
     border-radius: 3px;
     letter-spacing: 2px;
     text-transform: uppercase;
     transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
 }
 
-.btn-gold:hover {
+.btn-chrome:hover {
     transform: translateY(-2px);
-    box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.6);
+    background: linear-gradient(135deg, #ffffff 0%, var(--accent-cyan) 100%);
 }
 
-/* --- LAYOUT SPLIT SCREEN (ESTILO CANVA) --- */
+/* --- LAYOUT SPLIT SCREEN --- */
 .section-split {
     padding: 110px 0 70px;
     display: flex;
@@ -138,47 +146,49 @@ a {
     display: block;
 }
 
-/* TIPOGRAFIA FINA E ELEGANTE */
+/* TIPOGRAFIA COM CONTRASTE WCAG AA (#FF4D8D) */
 .subtitle-tag {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 0.75rem;
-    letter-spacing: 4px;
-    color: var(--text-muted);
+    font-family: 'Audiowide', cursive;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    color: var(--accent-pink) !important;
+    text-shadow: 0 0 10px rgba(255, 77, 141, 0.4);
     text-transform: uppercase;
     margin-bottom: 8px;
     display: block;
+    font-weight: 700;
 }
 
 .title-large {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 2.6rem;
-    font-weight: 300;
-    line-height: 1.15;
+    font-family: 'Audiowide', cursive;
+    font-size: 2.4rem;
+    font-weight: 400;
+    line-height: 1.2;
     letter-spacing: 2px;
-    color: var(--accent-red);
+    color: var(--accent-red) !important;
     text-transform: uppercase;
     margin-bottom: 20px;
 }
 
 .title-large span {
-    color: #fff;
-    font-weight: 500;
+    color: var(--accent-silver);
 }
 
 .text-desc {
-    font-size: 1rem;
-    font-weight: 300;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 400;
     color: var(--text-muted);
     margin-bottom: 30px;
     max-width: 500px;
 }
 
-/* TABELA TÉCNICA COM BORDAS VERMELHAS (MARCA CANVA) */
+/* TABELA TÉCNICA */
 .info-table {
     display: flex;
     flex-direction: column;
     gap: 16px;
-    border-left: 2px solid var(--accent-red);
+    border-left: 2px solid var(--accent-cyan);
     padding-left: 20px;
 }
 
@@ -189,22 +199,23 @@ a {
 }
 
 .info-label {
-    font-family: 'Orbitron', sans-serif;
+    font-family: 'Audiowide', cursive;
     font-size: 0.8rem;
     letter-spacing: 2px;
-    color: var(--accent-red);
+    color: var(--accent-cyan);
     text-transform: uppercase;
     width: 110px;
     flex-shrink: 0;
 }
 
 .info-value {
-    font-size: 0.95rem;
-    font-weight: 300;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 500;
     color: var(--text-light);
 }
 
-/* --- SEÇÃO COMPRA DE INGRESSOS / TICKET PASS --- */
+/* --- SEÇÃO COMPRA DE INGRESSOS E FORMULÁRIO --- */
 .ticket-card {
     background: var(--bg-card);
     border: 1px solid var(--border-color);
@@ -229,30 +240,33 @@ a {
     border: 1px solid var(--border-color);
     border-radius: 4px;
     cursor: pointer;
-    transition: border-color 0.3s;
+    transition: all 0.3s ease;
 }
 
 .ticket-item:hover, .ticket-item.active {
-    border-color: var(--accent-gold);
+    border-color: var(--accent-cyan);
+    background: rgba(10, 25, 40, 0.8);
+    box-shadow: 0 0 12px rgba(0, 240, 255, 0.25);
 }
 
 .ticket-title {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 0.95rem;
-    color: var(--accent-gold);
-    letter-spacing: 2px;
+    font-family: 'Audiowide', cursive;
+    font-size: 0.9rem;
+    color: var(--accent-cyan);
+    letter-spacing: 1px;
 }
 
 .ticket-sub {
-    font-size: 0.85rem;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 0.95rem;
     color: var(--text-muted);
-    font-weight: 300;
+    font-weight: 400;
 }
 
 .ticket-price {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 1.1rem;
-    color: #fff;
+    font-family: 'Audiowide', cursive;
+    font-size: 1rem;
+    color: var(--accent-silver);
 }
 
 .booking-form {
@@ -269,7 +283,9 @@ a {
 }
 
 .form-group label {
-    font-size: 0.8rem;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
+    font-size: 0.85rem;
     letter-spacing: 1px;
     color: var(--text-muted);
     text-transform: uppercase;
@@ -281,12 +297,90 @@ a {
     color: #fff;
     padding: 12px;
     border-radius: 4px;
-    font-size: 0.9rem;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1rem;
     outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
 }
 
+/* VALIDAÇÃO VISUAL DO FORMULÁRIO COM #FF4D8D */
 .form-group input:focus, .form-group select:focus {
-    border-color: var(--accent-gold);
+    border-color: var(--accent-cyan);
+    box-shadow: 0 0 8px rgba(0, 240, 255, 0.3);
+}
+
+.form-group input:focus:invalid, .form-group select:focus:invalid {
+    border-color: var(--accent-pink) !important;
+    box-shadow: 0 0 10px rgba(255, 77, 141, 0.4) !important;
+}
+
+.form-group input:valid, .form-group select:valid {
+    border-color: var(--accent-cyan);
+}
+
+.btn-submit-ticket {
+    width: 100%;
+    padding: 14px;
+    margin-top: 10px;
+    font-size: 0.85rem;
+}
+
+.ticket-alert-success {
+    display: none;
+    margin-top: 18px;
+    padding: 15px;
+    background: rgba(0, 240, 255, 0.1);
+    border: 1px solid var(--accent-cyan);
+    border-radius: 4px;
+    color: var(--accent-cyan);
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* --- BANNER DE COOKIES --- */
+.cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(13, 5, 20, 0.96);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-top: 1px solid var(--accent-cyan);
+    box-shadow: 0 -5px 25px rgba(0, 240, 255, 0.2);
+    padding: 18px 25px;
+    z-index: 999999;
+}
+
+.cookie-content {
+    max-width: 1180px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.cookie-content p {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+    margin: 0;
+}
+
+.cookie-content p strong {
+    color: var(--accent-cyan);
+}
+
+.cookie-buttons {
+    flex-shrink: 0;
+}
+
+.cookie-btn {
+    white-space: nowrap;
+    padding: 10px 18px;
 }
 
 /* --- 3D FLIP CARDS --- */
@@ -343,15 +437,15 @@ a {
     right: 0;
     padding: 15px;
     background: linear-gradient(transparent, rgba(8, 3, 12, 0.95));
-    font-family: 'Orbitron', sans-serif;
-    font-size: 1.1rem;
-    color: var(--accent-gold);
+    font-family: 'Audiowide', cursive;
+    font-size: 1rem;
+    color: var(--accent-cyan);
     letter-spacing: 2px;
 }
 
 .card-back {
     background: linear-gradient(135deg, var(--bg-card), var(--bg-dark));
-    border: 1px solid var(--accent-red);
+    border: 1px solid var(--accent-cyan);
     padding: 25px 20px;
     display: flex;
     flex-direction: column;
@@ -362,25 +456,27 @@ a {
 }
 
 .card-back h3 {
-    font-family: 'Orbitron', sans-serif;
-    color: var(--accent-red);
-    font-size: 1.2rem;
+    font-family: 'Audiowide', cursive;
+    color: var(--accent-red) !important;
+    font-size: 1.1rem;
     margin-bottom: 6px;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
 }
 
 .card-back .role {
-    font-size: 0.8rem;
-    color: var(--accent-gold);
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: var(--accent-cyan);
     text-transform: uppercase;
     letter-spacing: 1px;
     margin-bottom: 12px;
 }
 
 .card-back p {
-    font-size: 0.85rem;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 0.95rem;
     color: var(--text-muted);
-    font-weight: 300;
 }
 
 /* --- CARROSSEL CONTÍNUO --- */
@@ -420,7 +516,7 @@ a {
     100% { transform: translateX(0%); }
 }
 
-/* --- GALERIA LIGHTBOX 100% CSS --- */
+/* --- GALERIA LIGHTBOX --- */
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -432,12 +528,12 @@ a {
     border-radius: var(--radius);
     overflow: hidden;
     border: 1px solid var(--border-color);
-    transition: transform 0.3s;
+    transition: transform 0.3s, border-color 0.3s;
 }
 
 .gallery-item:hover {
     transform: translateY(-4px);
-    border-color: var(--accent-gold);
+    border-color: var(--accent-cyan);
 }
 
 .gallery-item img {
@@ -486,7 +582,7 @@ a {
     max-width: 100%;
     max-height: 80vh;
     border-radius: var(--radius);
-    border: 1px solid var(--accent-red);
+    border: 1px solid var(--accent-cyan);
 }
 
 .close-btn {
@@ -509,11 +605,12 @@ a {
 
 /* --- FOOTER --- */
 .footer {
-    padding: 60px 0 30px;
+    padding: 60px 0 100px;
     border-top: 1px solid var(--border-color);
     background: #040106;
     text-align: center;
-    font-size: 0.8rem;
+    font-family: 'Audiowide', cursive;
+    font-size: 0.75rem;
     color: var(--text-muted);
     letter-spacing: 1px;
 }
@@ -529,6 +626,10 @@ a {
         gap: 12px;
     }
     .title-large {
-        font-size: 2rem;
+        font-size: 1.9rem;
+    }
+    .cookie-content {
+        flex-direction: column;
+        text-align: center;
     }
 }
