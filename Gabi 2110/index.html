@@ -3,29 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>K/DA FIRESTARTER — Tour & Data Science Pass</title>
+    <title>K/DA FIRESTARTER — World Tour Official</title>
     
-    <!-- Google Fonts -->
+    <!-- Google Fonts: Audiowide & Rajdhani -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@300;400;500;700&family=Rajdhani:wght@300;400;500;600;700&family=Inter:wght@200;300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Arquivo CSS Externo -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- Estilos de Acessibilidade, Validação e Unificação de Cores -->
+    <style>
+        /* Unificação da Cor Vermelho/Rosa (#FF4D8D) para Títulos e Subtítulos */
+        .title-large {
+            color: #FF4D8D !important;
+        }
+
+        .subtitle-tag {
+            color: #FF4D8D !important;
+            text-shadow: 0 0 10px rgba(255, 77, 141, 0.4);
+            font-weight: 700;
+            letter-spacing: 1.5px;
+        }
+
+        .card-back h3 {
+            color: #FF4D8D !important;
+        }
+
+        /* Validação Visual de Formulário */
+        .booking-form input:focus:invalid,
+        .booking-form select:focus:invalid {
+            border-color: #FF4D8D !important;
+            box-shadow: 0 0 10px rgba(255, 77, 141, 0.5) !important;
+        }
+
+        .booking-form input:valid {
+            border-color: #05d9e8 !important;
+        }
+
+        .input-error-message {
+            color: #FF4D8D;
+            font-size: 0.85rem;
+            margin-top: 4px;
+            display: none;
+        }
+    </style>
+
+    <!-- ÍCONE DA ABA (FAVICON) -->
+    <link rel="icon" type="image/png" href="KdaFirestarter/logo.webp">
 </head>
 <body>
 
     <!-- HEADER / NAVEGAÇÃO -->
     <header class="header">
-        <a href="#" class="logo">K/DA <span>DS LABS</span></a>
+        <a href="#" class="logo">
+            <img src="KdaFirestarter/logo.webp" alt="Logotipo oficial da turnê K/DA Firestarter" class="logo-img">
+        </a>
         <nav class="nav-menu">
             <a href="#sobre">Sobre</a>
-            <a href="#mentoras">Mentoras</a>
+            <a href="#mentoras">Integrantes</a>
             <a href="#turne">Datas</a>
             <a href="#ingressos">Ingressos</a>
             <a href="#galeria">Galeria</a>
         </nav>
-        <a href="#ingressos" class="btn-gold">Garantir Pass</a>
+        <a href="#ingressos" class="btn-chrome">Garantir Pass</a>
     </header>
 
     <div class="container">
@@ -34,12 +76,12 @@
         <section class="section-split">
             <div class="split-content">
                 <span class="subtitle-tag">K/DA // FIRESTARTER ERA</span>
-                <h1 class="title-large">A TURNÊ QUE ACENDE O <span>PRÓXIMO NÍVEL.</span></h1>
-                <p class="text-desc">O programa oficial de Data Science, IA e Visualização de Dados ambientado na era FIRESTARTER. Garanta sua credencial de acesso ao show e às aulas VIP.</p>
-                <a href="#ingressos" class="btn-gold">Comprar Ingressos VIP</a>
+                <h1 class="title-large">A TURNÊ QUE ACENDE O <span>PALCO MUNDIAL.</span></h1>
+                <p class="text-desc">A experiência oficial de show ao vivo da era FIRESTARTER. Garanta sua credencial de acesso à arena mundial e viva a energia da pista VIP.</p>
+                <a href="#ingressos" class="btn-chrome">Comprar Ingressos VIP</a>
             </div>
             <div class="split-visual">
-                <img src="KdaFirestarter/kda.jpg" alt="K/DA Firestarter Official Music Video">
+                <img src="KdaFirestarter/kda.jpg" alt="Integrantes do grupo K/DA reunidas em iluminação néon no clipe FIRESTARTER">
             </div>
         </section>
 
@@ -48,7 +90,7 @@
             <div class="split-content">
                 <span class="subtitle-tag">SOBRE O FIRESTARTER</span>
                 <h2 class="title-large">FIRESTARTER <span>EXPERIENCE</span></h2>
-                <p class="text-desc">Firestarter é a faísca que acende algo maior. Um show que impulsiona energia, inovação e o espetáculo dos dados ao próximo nível.</p>
+                <p class="text-desc">Firestarter é a faísca que acende o palco. Um espetáculo ao vivo imersivo com pirotecnia, iluminação futurista e a energia pura do K/DA.</p>
 
                 <div class="info-table">
                     <div class="info-row">
@@ -70,28 +112,28 @@
                 </div>
             </div>
             <div class="split-visual">
-                <img src="KdaFirestarter/fogo2.webp" alt="Start A Fire Poster">
+                <img src="KdaFirestarter/fogo2.webp" alt="Pôster promocional do tema Firestarter com chama néon e detalhes da turnê" loading="lazy">
             </div>
         </section>
 
         <!-- CONHEÇA AS K/DA (3D FLIP CARDS) -->
         <section id="mentoras" style="padding: 80px 0;">
             <span class="subtitle-tag" style="text-align: center;">CONHEÇA AS</span>
-            <h2 class="title-large" style="text-align: center;">K/DA <span>MENTORAS</span></h2>
-            <p class="text-desc" style="text-align: center; margin: 0 auto 30px;">Cinco artistas. Uma presença avassaladora. O poder dos dados em sua forma mais intensa. Passe o mouse no card para virar.</p>
+            <h2 class="title-large" style="text-align: center;">K/DA <span>INTEGRANTES</span></h2>
+            <p class="text-desc" style="text-align: center; margin: 0 auto 30px;">Quatro artistas. Uma presença avassaladora. A energia do pop e do hip-hop em sua forma mais intensa. Passe o mouse no card para virar.</p>
 
             <div class="cards-grid">
                 <!-- AHRI -->
                 <div class="card-container">
                     <div class="card-inner">
                         <div class="card-front">
-                            <img src="KdaFirestarter/ahri.jpg" alt="Ahri">
+                            <img src="KdaFirestarter/ahri.jpg" alt="Retrato de Ahri, líder do K/DA" loading="lazy">
                             <div class="card-front-title">AHRI</div>
                         </div>
                         <div class="card-back">
                             <h3>AHRI</h3>
-                            <div class="role">Líder e Rosto do Grupo</div>
-                            <p>Arquiteta de Modelos Generativos e Redes Neurais. Define o rumo estratégico de cada grande produção de dados.</p>
+                            <div class="role">Líder e Vocalista Principal</div>
+                            <p>Fundadora e visão criativa do K/DA. Com vocal marcante e presença magnética, comanda a identidade do grupo no palco.</p>
                         </div>
                     </div>
                 </div>
@@ -100,13 +142,13 @@
                 <div class="card-container">
                     <div class="card-inner">
                         <div class="card-front">
-                            <img src="KdaFirestarter/akali.jpg" alt="Akali">
+                            <img src="KdaFirestarter/akali.jpg" alt="Retrato de Akali, rapper do K/DA" loading="lazy">
                             <div class="card-front-title">AKALI</div>
                         </div>
                         <div class="card-back">
                             <h3>AKALI</h3>
-                            <div class="role">Performance Explosiva</div>
-                            <p>Especialista em Feature Engineering e aceleração de código em GPU com precisão cirúrgica e estilo marcante.</p>
+                            <div class="role">Rapper e Performer</div>
+                            <p>A força underground do grupo. Traz rimas rápidas, flow de rua e uma atitude inabalável para o palco do K/DA.</p>
                         </div>
                     </div>
                 </div>
@@ -115,13 +157,13 @@
                 <div class="card-container">
                     <div class="card-inner">
                         <div class="card-front">
-                            <img src="KdaFirestarter/evelynn.jpg" alt="Evelynn">
+                            <img src="KdaFirestarter/evelynn.jpg" alt="Retrato de Evelynn, diva vocalista do K/DA" loading="lazy">
                             <div class="card-front-title">EVELYNN</div>
                         </div>
                         <div class="card-back">
                             <h3>EVELYNN</h3>
-                            <div class="role">Mistério e Sensualidade</div>
-                            <p>Data Mining e Análise de Sentimentos em mídias sociais. Revela padrões ocultos no comportamento do público.</p>
+                            <div class="role">Vocalista e Diva Principal</div>
+                            <p>A voz mais marcante e hipnotizante do pop mundial. Estilo impecável, glamour ousado e vocais inesquecíveis.</p>
                         </div>
                     </div>
                 </div>
@@ -130,13 +172,13 @@
                 <div class="card-container">
                     <div class="card-inner">
                         <div class="card-front">
-                            <img src="KdaFirestarter/kaisa.jpg" alt="Kai'Sa">
+                            <img src="KdaFirestarter/kaisa.jpg" alt="Retrato de Kai'Sa, dançarina do K/DA" loading="lazy">
                             <div class="card-front-title">KAI'SA</div>
                         </div>
                         <div class="card-back">
                             <h3>KAI'SA</h3>
-                            <div class="role">Poder e Precisão</div>
-                            <p>Visão Computacional e análise espacial. Mapeia movimentações de multidões com alto alcance e performance.</p>
+                            <div class="role">Dançarina Principal & Coreógrafa</div>
+                            <p>Mente criativa por trás das danças e movimentos icônicos. Precisão cirúrgica e ritmo explosivo em cada apresentação.</p>
                         </div>
                     </div>
                 </div>
@@ -148,7 +190,7 @@
             <div class="split-content">
                 <span class="subtitle-tag">CRONOGRAMA OFICIAL</span>
                 <h2 class="title-large">DATAS DA <span>TURNÊ</span></h2>
-                <p class="text-desc">Confira os locais confirmados para as turmas presenciais e transmissões da turnê mundial.</p>
+                <p class="text-desc">Confira os locais confirmados para as apresentações presenciais da turnê mundial FIRESTARTER.</p>
 
                 <div class="info-table">
                     <div class="info-row">
@@ -174,7 +216,7 @@
                 </div>
             </div>
             <div class="split-visual">
-                <img src="KdaFirestarter/shows.png" alt="K/DA Tour Fire Trail Stage">
+                <img src="KdaFirestarter/shows.png" alt="Pôster das datas do show com as integrantes em um cenário vermelho flamejante" loading="lazy">
             </div>
         </section>
 
@@ -183,51 +225,53 @@
             <div class="split-content">
                 <span class="subtitle-tag">GARANTA SEU LUGAR</span>
                 <h2 class="title-large">INGRESSOS & <span>ONDE COMPRAR</span></h2>
-                <p class="text-desc">Seu lugar no show e no curso das K/DA começa aqui. Escolha a sua categoria de acesso:</p>
+                <p class="text-desc">Seu lugar no show lendário do K/DA começa aqui. Escolha a sua categoria de ingresso abaixo:</p>
 
                 <div class="ticket-card">
                     <div class="ticket-options">
-                        <div class="ticket-item active">
+                        <div class="ticket-item" onclick="selectTicket(this, 'PISTA FIRESTARTER', '12x R$ 89')">
                             <div>
                                 <div class="ticket-title">PISTA FIRESTARTER</div>
-                                <div class="ticket-sub">Acesso completo ao show e conteúdos gravados</div>
+                                <div class="ticket-sub">Acesso completo à área da pista e arena principal</div>
                             </div>
                             <div class="ticket-price">12x R$ 89</div>
                         </div>
 
-                        <div class="ticket-item">
+                        <div class="ticket-item" onclick="selectTicket(this, 'CAMAROTE K/DA', '12x R$ 189')">
                             <div>
                                 <div class="ticket-title">CAMAROTE K/DA</div>
-                                <div class="ticket-sub">Visão privilegiada + Mentoria ao vivo semanais</div>
+                                <div class="ticket-sub">Visão privilegiada + Acesso à área VIP com bar exclusivo</div>
                             </div>
                             <div class="ticket-price">12x R$ 189</div>
                         </div>
 
-                        <div class="ticket-item" style="border-color: var(--accent-gold);">
+                        <div class="ticket-item active" onclick="selectTicket(this, 'EXPERIÊNCIA VIP', '12x R$ 349')">
                             <div>
-                                <div class="ticket-title" style="color: var(--accent-gold);">EXPERIÊNCIA VIP</div>
-                                <div class="ticket-sub">Benefícios exclusivos, projetos 1-on-1 + Backstage Pass</div>
+                                <div class="ticket-title" style="color: var(--accent-cyan);">EXPERIÊNCIA VIP</div>
+                                <div class="ticket-sub">Benefícios VIP + Backstage Pass + Acesso exclusivo antecipado</div>
                             </div>
-                            <div class="ticket-price" style="color: var(--accent-gold);">12x R$ 349</div>
+                            <div class="ticket-price" style="color: var(--accent-cyan);">12x R$ 349</div>
                         </div>
                     </div>
 
                     <!-- FORMULÁRIO DE CHECKOUT DE INGRESSOS -->
-                    <form class="booking-form" onsubmit="event.preventDefault(); alert('Ingresso/Matrícula confirmada! Enviamos os detalhes para o seu e-mail.');">
+                    <form class="booking-form" id="form-ingresso" onsubmit="confirmarIngresso(event)">
+                        <input type="hidden" id="categoria-selecionada" value="EXPERIÊNCIA VIP">
+
                         <div class="form-group">
-                            <label for="cidade">Selecione a Cidade do Show / Turma</label>
+                            <label for="cidade">Selecione a Cidade do Show</label>
                             <select id="cidade" required>
-                                <option value="sp">São Paulo, Brasil</option>
-                                <option value="curitiba">Curitiba, Brasil</option>
-                                <option value="poa">Porto Alegre, Brasil</option>
-                                <option value="bh">Belo Horizonte, Brasil</option>
-                                <option value="rj">Rio de Janeiro, Brasil</option>
+                                <option value="São Paulo, Brasil">São Paulo, Brasil</option>
+                                <option value="Curitiba, Brasil">Curitiba, Brasil</option>
+                                <option value="Porto Alegre, Brasil">Porto Alegre, Brasil</option>
+                                <option value="Belo Horizonte, Brasil">Belo Horizonte, Brasil</option>
+                                <option value="Rio de Janeiro, Brasil">Rio de Janeiro, Brasil</option>
                             </select>
                         </div>
 
                         <div class="form-group">
                             <label for="nome">Nome Completo do Titular</label>
-                            <input type="text" id="nome" placeholder="Digite seu nome completo" required>
+                            <input type="text" id="nome" placeholder="Digite seu nome completo" required minlength="3">
                         </div>
 
                         <div class="form-group">
@@ -235,12 +279,25 @@
                             <input type="email" id="email" placeholder="seuemail@exemplo.com" required>
                         </div>
 
-                        <button type="submit" class="btn-gold" style="width: 100%; border: none; cursor: pointer; padding: 14px; margin-top: 10px;">Comprar Ingresso VIP Now</button>
+                        <div class="form-group">
+                            <label for="qtd-ingressos">Quantidade de Ingressos</label>
+                            <select id="qtd-ingressos">
+                                <option value="1">1 Ingresso</option>
+                                <option value="2">2 Ingressos</option>
+                                <option value="3">3 Ingressos</option>
+                                <option value="4">4 Ingressos</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="btn-chrome btn-submit-ticket">
+                            Garantir <span id="lbl-tipo-ingresso">EXPERIÊNCIA VIP</span> Agora
+                        </button>
                     </form>
+                    <div id="mensagem-sucesso" class="ticket-alert-success"></div>
                 </div>
             </div>
             <div class="split-visual">
-                <img src="KdaFirestarter/olhos.png" alt="Poster de Ingressos Nextween Open Bar">
+                <img src="KdaFirestarter/olhos.png" alt="Ilustração estilizada do olhar das integrantes do K/DA com brilho neon" loading="lazy">
             </div>
         </section>
 
@@ -251,10 +308,10 @@
             
             <div class="slider-wrapper">
                 <div class="slider-track">
-                    <img class="slide-img" src="KdaFirestarter/red.jpg" alt="Palco Firestarter">
-                    <img class="slide-img" src="KdaFirestarter/branco.jpg" alt="Spotlight Walk">
-                    <img class="slide-img" src="KdaFirestarter/rostos.png" alt="Fire Trail Walk">
-                    <img class="slide-img" src="KdaFirestarter/pose.jpg" alt="K/DA Group">
+                    <img class="slide-img" src="KdaFirestarter/red.jpg" alt="Visão panorâmica do palco iluminado em vermelho" loading="lazy">
+                    <img class="slide-img" src="KdaFirestarter/branco.jpg" alt="Performance do K/DA sob luz branca intensa" loading="lazy">
+                    <img class="slide-img" src="KdaFirestarter/rostos.png" alt="Integrantes do K/DA em fila na passarela do show" loading="lazy">
+                    <img class="slide-img" src="KdaFirestarter/pose.jpg" alt="Grupo K/DA reunido em pose no palco" loading="lazy">
                 </div>
             </div>
         </section>
@@ -265,10 +322,10 @@
             <h2 class="title-large" style="text-align: center;">LIGHTBOX <span>AMPLIADO</span></h2>
             
             <div class="gallery-grid">
-                <a href="#img1" class="gallery-item"><img src="KdaFirestarter/red.jpg" alt="Clipe Oficial"></a>
-                <a href="#img2" class="gallery-item"><img src="KdaFirestarter/branco.jpg" alt="Show Ao Vivo"></a>
-                <a href="#img3" class="gallery-item"><img src="KdaFirestarter/rostos.png" alt="Rastro de Fogo"></a>
-                <a href="#img4" class="gallery-item"><img src="KdaFirestarter/pose.jpg" alt="Close Integrantes"></a>
+                <a href="#img1" class="gallery-item"><img src="KdaFirestarter/red.jpg" alt="Cena do clipe oficial com luzes vermelhas" loading="lazy"></a>
+                <a href="#img2" class="gallery-item"><img src="KdaFirestarter/branco.jpg" alt="Show ao vivo sob holofotes" loading="lazy"></a>
+                <a href="#img3" class="gallery-item"><img src="KdaFirestarter/evefo.webp" alt="Rastro de Fogo" loading="lazy"></a>
+                <a href="#img4" class="gallery-item"><img src="KdaFirestarter/pose.jpg" alt="Close das integrantes do grupo" loading="lazy"></a>
             </div>
 
             <!-- MODAIS LIGHTBOX -->
@@ -276,7 +333,7 @@
                 <a href="#galeria" class="lightbox-overlay"></a>
                 <div class="lightbox-content">
                     <a href="#galeria" class="close-btn">&times;</a>
-                    <img src="KdaFirestarter/palco.png" alt="Clipe Oficial Ampliado">
+                    <img src="KdaFirestarter/palco.png" alt="Visão ampliada da iluminação do palco principal" loading="lazy">
                 </div>
             </div>
 
@@ -284,7 +341,7 @@
                 <a href="#galeria" class="lightbox-overlay"></a>
                 <div class="lightbox-content">
                     <a href="#galeria" class="close-btn">&times;</a>
-                    <img src="KdaFirestarter/Andar.png" alt="Show Ao Vivo Ampliado">
+                    <img src="KdaFirestarter/Andar.png" alt="Visão ampliada das integrantes caminhando na passarela" loading="lazy">
                 </div>
             </div>
 
@@ -292,7 +349,7 @@
                 <a href="#galeria" class="lightbox-overlay"></a>
                 <div class="lightbox-content">
                     <a href="#galeria" class="close-btn">&times;</a>
-                    <img src="KdaFirestarter/fogo.png" alt="Rastro de Fogo Ampliado">
+                    <img src="KdaFirestarter/evefo.webp" alt="Visão ampliada do Rastro de Fogo com Evelynn" loading="lazy">
                 </div>
             </div>
 
@@ -300,7 +357,7 @@
                 <a href="#galeria" class="lightbox-overlay"></a>
                 <div class="lightbox-content">
                     <a href="#galeria" class="close-btn">&times;</a>
-                    <img src="KdaFirestarter/rostos.png" alt="Close Integrantes Ampliado">
+                    <img src="KdaFirestarter/rostos.png" alt="Visão ampliada do retrato das integrantes do K/DA" loading="lazy">
                 </div>
             </div>
         </section>
@@ -340,16 +397,76 @@
                 </div>
             </div>
             <div class="split-visual">
-                <img src="KdaFirestarter/datas.png" alt="K/DA Red Members Close">
+                <img src="KdaFirestarter/datas.png" alt="Integrantes do K/DA em imagem promocional com tons avermelhados" loading="lazy">
             </div>
         </section>
 
     </div>
 
+    <!-- BANNER DE COOKIES (LGPD COMPLIANCE) -->
+    <div id="cookie-banner" class="cookie-banner">
+        <div class="cookie-content">
+            <p>🍪 Utilizamos cookies para personalizar conteúdos, analisar o tráfego de dados e otimizar sua experiência no site oficial do <strong>K/DA FIRESTARTER</strong>. Ao continuar navegando, você concorda com a nossa política de privacidade.</p>
+            <div class="cookie-buttons">
+                <button onclick="aceitarCookies()" class="btn-chrome cookie-btn">Aceitar e Continuar</button>
+            </div>
+        </div>
+    </div>
+
     <!-- RODAPÉ -->
     <footer class="footer">
-        <p>© 2026 K/DA DATA SCIENCE LABS // FIRESTARTER ERA. TODOS OS DIREITOS RESERVADOS.</p>
+        <p>© 2026 K/DA MUSIC // FIRESTARTER TOUR. TODOS OS DIREITOS RESERVADOS.</p>
     </footer>
 
+    <!-- SCRIPTS DE INTERATIVIDADE DOS INGRESSOS E COOKIES -->
+    <script>
+        function selectTicket(element, nomeTipo, preco) {
+            document.querySelectorAll('.ticket-item').forEach(item => item.classList.remove('active'));
+            element.classList.add('active');
+            document.getElementById('categoria-selecionada').value = nomeTipo;
+            document.getElementById('lbl-tipo-ingresso').innerText = nomeTipo;
+        }
+
+        function confirmarIngresso(event) {
+            event.preventDefault();
+            const form = document.getElementById('form-ingresso');
+            
+            if (!form.checkValidity()) {
+                form.reportValidity();
+                return;
+            }
+
+            const nome = document.getElementById('nome').value;
+            const email = document.getElementById('email').value;
+            const cidade = document.getElementById('cidade').value;
+            const qtd = document.getElementById('qtd-ingressos').value;
+            const tipo = document.getElementById('categoria-selecionada').value;
+
+            const msgDiv = document.getElementById('mensagem-sucesso');
+            msgDiv.style.display = 'block';
+            msgDiv.innerHTML = `✨ <strong>Sucesso, ${nome}!</strong> Confirmamos a reserva de <strong>${qtd}x ${tipo}</strong> para <strong>${cidade}</strong>. Os e-tickets foram enviados para <em>${email}</em>.`;
+
+            form.reset();
+        }
+
+        function aceitarCookies() {
+            localStorage.setItem('kda_cookie_consent', 'accepted');
+            document.getElementById('cookie-banner').style.display = 'none';
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            if (localStorage.getItem('kda_cookie_consent') === 'accepted') {
+                document.getElementById('cookie-banner').style.display = 'none';
+            }
+        });
+    </script>
+
+    <!-- CHATBOT INTERATIVO -->
+    <script src="chatbot.js"></script>
+    <script>
+      initChatbot({
+        jsonUrl: 'minha-base-dados.json'
+      });
+    </script>
 </body>
 </html>
