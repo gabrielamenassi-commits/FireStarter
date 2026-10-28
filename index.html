@@ -13,6 +13,35 @@
     <!-- Arquivo CSS Externo -->
     <link rel="stylesheet" href="style.css">
 
+    <!-- Estilos Adicionais de Acessibilidade e Validação -->
+    <style>
+        /* Melhoria de Contraste WCAG AA para Subtítulos */
+        .subtitle-tag {
+            color: #FF4D8D !important;
+            text-shadow: 0 0 10px rgba(255, 77, 141, 0.4);
+            font-weight: 700;
+            letter-spacing: 1.5px;
+        }
+
+        /* Validação Visual de Formulário */
+        .booking-form input:focus:invalid,
+        .booking-form select:focus:invalid {
+            border-color: #ff2a6d !important;
+            box-shadow: 0 0 10px rgba(255, 42, 109, 0.5) !important;
+        }
+
+        .booking-form input:valid {
+            border-color: #05d9e8 !important;
+        }
+
+        .input-error-message {
+            color: #ff4d8d;
+            font-size: 0.85rem;
+            margin-top: 4px;
+            display: none;
+        }
+    </style>
+
     <!-- ÍCONE DA ABA (FAVICON) -->
     <link rel="icon" type="image/png" href="KdaFirestarter/logo.webp">
 </head>
@@ -21,7 +50,7 @@
     <!-- HEADER / NAVEGAÇÃO -->
     <header class="header">
         <a href="#" class="logo">
-            <img src="KdaFirestarter/logo.webp" alt="K/DA" class="logo-img">
+            <img src="KdaFirestarter/logo.webp" alt="Logotipo oficial da turnê K/DA Firestarter" class="logo-img">
         </a>
         <nav class="nav-menu">
             <a href="#sobre">Sobre</a>
@@ -44,7 +73,7 @@
                 <a href="#ingressos" class="btn-chrome">Comprar Ingressos VIP</a>
             </div>
             <div class="split-visual">
-                <img src="KdaFirestarter/kda.jpg" alt="K/DA Firestarter Official Music Video">
+                <img src="KdaFirestarter/kda.jpg" alt="Integrantes do grupo K/DA reunidas em iluminação néon no clipe FIRESTARTER">
             </div>
         </section>
 
@@ -75,7 +104,7 @@
                 </div>
             </div>
             <div class="split-visual">
-                <img src="KdaFirestarter/fogo2.webp" alt="Start A Fire Poster">
+                <img src="KdaFirestarter/fogo2.webp" alt="Pôster promocional do tema Firestarter com chama néon e detalhes da turnê" loading="lazy">
             </div>
         </section>
 
@@ -90,7 +119,7 @@
                 <div class="card-container">
                     <div class="card-inner">
                         <div class="card-front">
-                            <img src="KdaFirestarter/ahri.jpg" alt="Ahri">
+                            <img src="KdaFirestarter/ahri.jpg" alt="Retrato de Ahri, líder do K/DA" loading="lazy">
                             <div class="card-front-title">AHRI</div>
                         </div>
                         <div class="card-back">
@@ -105,7 +134,7 @@
                 <div class="card-container">
                     <div class="card-inner">
                         <div class="card-front">
-                            <img src="KdaFirestarter/akali.jpg" alt="Akali">
+                            <img src="KdaFirestarter/akali.jpg" alt="Retrato de Akali, rapper do K/DA" loading="lazy">
                             <div class="card-front-title">AKALI</div>
                         </div>
                         <div class="card-back">
@@ -120,7 +149,7 @@
                 <div class="card-container">
                     <div class="card-inner">
                         <div class="card-front">
-                            <img src="KdaFirestarter/evelynn.jpg" alt="Evelynn">
+                            <img src="KdaFirestarter/evelynn.jpg" alt="Retrato de Evelynn, diva vocalista do K/DA" loading="lazy">
                             <div class="card-front-title">EVELYNN</div>
                         </div>
                         <div class="card-back">
@@ -135,7 +164,7 @@
                 <div class="card-container">
                     <div class="card-inner">
                         <div class="card-front">
-                            <img src="KdaFirestarter/kaisa.jpg" alt="Kai'Sa">
+                            <img src="KdaFirestarter/kaisa.jpg" alt="Retrato de Kai'Sa, dançarina do K/DA" loading="lazy">
                             <div class="card-front-title">KAI'SA</div>
                         </div>
                         <div class="card-back">
@@ -179,7 +208,7 @@
                 </div>
             </div>
             <div class="split-visual">
-                <img src="KdaFirestarter/shows.png" alt="K/DA Tour Fire Trail Stage">
+                <img src="KdaFirestarter/shows.png" alt="Pôster das datas do show com as integrantes em um cenário vermelho flamejante" loading="lazy">
             </div>
         </section>
 
@@ -203,7 +232,7 @@
                         <div class="ticket-item" onclick="selectTicket(this, 'CAMAROTE K/DA', '12x R$ 189')">
                             <div>
                                 <div class="ticket-title">CAMAROTE K/DA</div>
-                                <div class="ticket-sub">Visão privilegiada + Acesso à área VIP com bar exclusivo</div>
+                                <div class="ticket-sub">Visão privileged + Acesso à área VIP com bar exclusivo</div>
                             </div>
                             <div class="ticket-price">12x R$ 189</div>
                         </div>
@@ -234,7 +263,7 @@
 
                         <div class="form-group">
                             <label for="nome">Nome Completo do Titular</label>
-                            <input type="text" id="nome" placeholder="Digite seu nome completo" required>
+                            <input type="text" id="nome" placeholder="Digite seu nome completo" required minlength="3">
                         </div>
 
                         <div class="form-group">
@@ -260,7 +289,7 @@
                 </div>
             </div>
             <div class="split-visual">
-                <img src="KdaFirestarter/olhos.png" alt="Poster de Ingressos Nextween Open Bar">
+                <img src="KdaFirestarter/olhos.png" alt="Ilustração estilizada do olhar das integrantes do K/DA com brilho neon" loading="lazy">
             </div>
         </section>
 
@@ -271,10 +300,10 @@
             
             <div class="slider-wrapper">
                 <div class="slider-track">
-                    <img class="slide-img" src="KdaFirestarter/red.jpg" alt="Palco Firestarter">
-                    <img class="slide-img" src="KdaFirestarter/branco.jpg" alt="Spotlight Walk">
-                    <img class="slide-img" src="KdaFirestarter/evefo.webp" alt="Fire Trail Walk">
-                    <img class="slide-img" src="KdaFirestarter/pose.jpg" alt="K/DA Group">
+                    <img class="slide-img" src="KdaFirestarter/red.jpg" alt="Visão panorâmica do palco iluminado em vermelho" loading="lazy">
+                    <img class="slide-img" src="KdaFirestarter/branco.jpg" alt="Performance do K/DA sob luz branca intensa" loading="lazy">
+                    <img class="slide-img" src="KdaFirestarter/rostos.png" alt="Integrantes do K/DA em fila na passarela do show" loading="lazy">
+                    <img class="slide-img" src="KdaFirestarter/pose.jpg" alt="Grupo K/DA reunido em pose no palco" loading="lazy">
                 </div>
             </div>
         </section>
@@ -285,10 +314,11 @@
             <h2 class="title-large" style="text-align: center;">LIGHTBOX <span>AMPLIADO</span></h2>
             
             <div class="gallery-grid">
-                <a href="#img1" class="gallery-item"><img src="KdaFirestarter/red.jpg" alt="Clipe Oficial"></a>
-                <a href="#img2" class="gallery-item"><img src="KdaFirestarter/branco.jpg" alt="Show Ao Vivo"></a>
-                <a href="#img3" class="gallery-item"><img src="KdaFirestarter/evefo.webp" alt="Rastro de Fogo"></a>
-                <a href="#img4" class="gallery-item"><img src="KdaFirestarter/pose.jpg" alt="Close Integrantes"></a>
+                <a href="#img1" class="gallery-item"><img src="KdaFirestarter/red.jpg" alt="Cena do clipe oficial com luzes vermelhas" loading="lazy"></a>
+                <a href="#img2" class="gallery-item"><img src="KdaFirestarter/branco.jpg" alt="Show ao vivo sob holofotes" loading="lazy"></a>
+                <!-- LINHA 276 ATUALIZADA COM EVEFO.WEBP -->
+                <a href="#img3" class="gallery-item"><img src="KdaFirestarter/evefo.webp" alt="Rastro de Fogo" loading="lazy"></a>
+                <a href="#img4" class="gallery-item"><img src="KdaFirestarter/pose.jpg" alt="Close das integrantes do grupo" loading="lazy"></a>
             </div>
 
             <!-- MODAIS LIGHTBOX -->
@@ -296,7 +326,7 @@
                 <a href="#galeria" class="lightbox-overlay"></a>
                 <div class="lightbox-content">
                     <a href="#galeria" class="close-btn">&times;</a>
-                    <img src="KdaFirestarter/palco.png" alt="Clipe Oficial Ampliado">
+                    <img src="KdaFirestarter/palco.png" alt="Visão ampliada da iluminação do palco principal" loading="lazy">
                 </div>
             </div>
 
@@ -304,15 +334,16 @@
                 <a href="#galeria" class="lightbox-overlay"></a>
                 <div class="lightbox-content">
                     <a href="#galeria" class="close-btn">&times;</a>
-                    <img src="KdaFirestarter/Andar.png" alt="Show Ao Vivo Ampliado">
+                    <img src="KdaFirestarter/Andar.png" alt="Visão ampliada das integrantes caminhando na passarela" loading="lazy">
                 </div>
             </div>
 
+            <!-- LINHA 290 ATUALIZADA COM EVEFO.WEBP -->
             <div class="lightbox" id="img3">
                 <a href="#galeria" class="lightbox-overlay"></a>
                 <div class="lightbox-content">
                     <a href="#galeria" class="close-btn">&times;</a>
-                    <img src="KdaFirestarter/fogo.png" alt="Rastro de Fogo Ampliado">
+                    <img src="KdaFirestarter/evefo.webp" alt="Visão ampliada do Rastro de Fogo com Evelynn" loading="lazy">
                 </div>
             </div>
 
@@ -320,7 +351,7 @@
                 <a href="#galeria" class="lightbox-overlay"></a>
                 <div class="lightbox-content">
                     <a href="#galeria" class="close-btn">&times;</a>
-                    <img src="KdaFirestarter/rostos.png" alt="Close Integrantes Ampliado">
+                    <img src="KdaFirestarter/rostos.png" alt="Visão ampliada do retrato das integrantes do K/DA" loading="lazy">
                 </div>
             </div>
         </section>
@@ -360,7 +391,7 @@
                 </div>
             </div>
             <div class="split-visual">
-                <img src="KdaFirestarter/datas.png" alt="K/DA Red Members Close">
+                <img src="KdaFirestarter/datas.png" alt="Integrantes do K/DA em imagem promocional com tons avermelhados" loading="lazy">
             </div>
         </section>
 
@@ -392,6 +423,13 @@
 
         function confirmarIngresso(event) {
             event.preventDefault();
+            const form = document.getElementById('form-ingresso');
+            
+            if (!form.checkValidity()) {
+                form.reportValidity();
+                return;
+            }
+
             const nome = document.getElementById('nome').value;
             const email = document.getElementById('email').value;
             const cidade = document.getElementById('cidade').value;
@@ -402,7 +440,7 @@
             msgDiv.style.display = 'block';
             msgDiv.innerHTML = `✨ <strong>Sucesso, ${nome}!</strong> Confirmamos a reserva de <strong>${qtd}x ${tipo}</strong> para <strong>${cidade}</strong>. Os e-tickets foram enviados para <em>${email}</em>.`;
 
-            document.getElementById('form-ingresso').reset();
+            form.reset();
         }
 
         function aceitarCookies() {
