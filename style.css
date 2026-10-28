@@ -3,11 +3,11 @@
     --bg-card: #13041a;
     --bg-glass: rgba(19, 4, 26, 0.85);
     --accent-red: #ff003c;
-    --accent-pink: #ff007f;
+    --accent-pink: #FF4D8D;     /* Rosa Neon de Alto Contraste (WCAG AA) */
     --accent-cyan: #00f0ff;      /* Ciano Neon em harmonia com a Logo */
     --accent-silver: #e2e8f0;    /* Prata Metalizado estilo Cromo */
     --text-light: #f5edf8;
-    --text-muted: #a392ad;
+    --text-muted: #b8a6c4;      /* Tom de texto secundário aclarado para leitura */
     --border-color: #2b0c36;
     --radius: 6px;
 }
@@ -146,15 +146,17 @@ a {
     display: block;
 }
 
-/* TIPOGRAFIA COM AUDIOWIDE E RAJDHANI */
+/* TIPOGRAFIA COM CONTRASTE WCAG AA */
 .subtitle-tag {
     font-family: 'Audiowide', cursive;
-    font-size: 0.75rem;
-    letter-spacing: 3px;
-    color: var(--accent-cyan);
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    color: var(--accent-pink);
+    text-shadow: 0 0 10px rgba(255, 77, 141, 0.4);
     text-transform: uppercase;
     margin-bottom: 8px;
     display: block;
+    font-weight: 700;
 }
 
 .title-large {
@@ -213,7 +215,7 @@ a {
     color: var(--text-light);
 }
 
-/* --- SEÇÃO COMPRA DE INGRESSOS --- */
+/* --- SEÇÃO COMPRA DE INGRESSOS E FORMULÁRIO --- */
 .ticket-card {
     background: var(--bg-card);
     border: 1px solid var(--border-color);
@@ -298,9 +300,21 @@ a {
     font-family: 'Rajdhani', sans-serif;
     font-size: 1rem;
     outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
 }
 
+/* VALIDAÇÃO VISUAL DO FORMULÁRIO */
 .form-group input:focus, .form-group select:focus {
+    border-color: var(--accent-cyan);
+    box-shadow: 0 0 8px rgba(0, 240, 255, 0.3);
+}
+
+.form-group input:focus:invalid, .form-group select:focus:invalid {
+    border-color: var(--accent-pink) !important;
+    box-shadow: 0 0 10px rgba(255, 77, 141, 0.4) !important;
+}
+
+.form-group input:valid, .form-group select:valid {
     border-color: var(--accent-cyan);
 }
 
@@ -514,7 +528,7 @@ a {
     border-radius: var(--radius);
     overflow: hidden;
     border: 1px solid var(--border-color);
-    transition: transform 0.3s;
+    transition: transform 0.3s, border-color 0.3s;
 }
 
 .gallery-item:hover {
