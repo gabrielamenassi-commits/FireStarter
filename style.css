@@ -2,12 +2,12 @@
     --bg-dark: #08030c;
     --bg-card: #13041a;
     --bg-glass: rgba(19, 4, 26, 0.85);
-    --accent-red: #ff003c;
-    --accent-pink: #FF4D8D;     /* Rosa Neon de Alto Contraste (WCAG AA) */
+    --accent-red: #FF4D8D;       /* Vermelho/Rosa Néon Vibrante WCAG AA */
+    --accent-pink: #FF4D8D;      /* Unificado para o mesmo tom vibrante */
     --accent-cyan: #00f0ff;      /* Ciano Neon em harmonia com a Logo */
     --accent-silver: #e2e8f0;    /* Prata Metalizado estilo Cromo */
     --text-light: #f5edf8;
-    --text-muted: #b8a6c4;      /* Tom de texto secundário aclarado para leitura */
+    --text-muted: #b8a6c4;
     --border-color: #2b0c36;
     --radius: 6px;
 }
@@ -26,7 +26,7 @@ html {
 body {
     background-color: var(--bg-dark);
     background-image: 
-        radial-gradient(circle at 15% 15%, rgba(102, 0, 34, 0.35) 0%, transparent 45%),
+        radial-gradient(circle at 15% 15%, rgba(255, 77, 141, 0.25) 0%, transparent 45%),
         radial-gradient(circle at 85% 85%, rgba(0, 240, 255, 0.1) 0%, transparent 50%);
     background-attachment: fixed;
     color: var(--text-light);
@@ -146,12 +146,12 @@ a {
     display: block;
 }
 
-/* TIPOGRAFIA COM CONTRASTE WCAG AA */
+/* TIPOGRAFIA COM CONTRASTE WCAG AA (#FF4D8D) */
 .subtitle-tag {
     font-family: 'Audiowide', cursive;
     font-size: 0.8rem;
     letter-spacing: 2px;
-    color: var(--accent-pink);
+    color: var(--accent-pink) !important;
     text-shadow: 0 0 10px rgba(255, 77, 141, 0.4);
     text-transform: uppercase;
     margin-bottom: 8px;
@@ -165,7 +165,7 @@ a {
     font-weight: 400;
     line-height: 1.2;
     letter-spacing: 2px;
-    color: var(--accent-red);
+    color: var(--accent-red) !important;
     text-transform: uppercase;
     margin-bottom: 20px;
 }
@@ -303,7 +303,7 @@ a {
     transition: border-color 0.3s, box-shadow 0.3s;
 }
 
-/* VALIDAÇÃO VISUAL DO FORMULÁRIO */
+/* VALIDAÇÃO VISUAL DO FORMULÁRIO COM #FF4D8D */
 .form-group input:focus, .form-group select:focus {
     border-color: var(--accent-cyan);
     box-shadow: 0 0 8px rgba(0, 240, 255, 0.3);
@@ -457,7 +457,7 @@ a {
 
 .card-back h3 {
     font-family: 'Audiowide', cursive;
-    color: var(--accent-red);
+    color: var(--accent-red) !important;
     font-size: 1.1rem;
     margin-bottom: 6px;
     letter-spacing: 1px;
