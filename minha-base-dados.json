@@ -1,0 +1,44 @@
+[
+  {
+    "titulo": "🔞 Classificação Etária",
+    "pergunta": "Qual a idade mínima para ir ao evento?",
+    "keywords": ["idade", "menor", "classificacao", "anos", "pais", "acompanhado", "crianca"],
+    "resposta": "A classificação etária é **18 anos**. Menores de 18 anos podem entrar acompanhados de pai, mãe ou responsável legal munido de autorização por escrito."
+  },
+  {
+    "titulo": "🎟️ Posso comprar na hora?",
+    "pergunta": "Tem bilheteria física para comprar ingresso na hora?",
+    "keywords": ["hora", "na hora", "bilheteria", "comprar la", "local", "ingresso la", "fisica"],
+    "resposta": "Haverá bilheteria no local **apenas se restarem ingressos**. Como a procura é alta, recomendamos garantir a sua credencial antecedida pelo site para não ficar de fora!"
+  },
+  {
+    "titulo": "🍕 Posso levar comida e bebida?",
+    "pergunta": "Pode entrar com alimentos ou garrafas de água?",
+    "keywords": ["comida", "bebida", "alimento", "garrafa", "entrar com comida", "lanche", "agua"],
+    "resposta": "É permitida a entrada de **água em garrafa plástica transparente (sem tampa)** e **alimentos industrializados lacrados** (ex: barras de cereal, biscoitos)."
+  },
+  {
+    "titulo": "📱 Como recebo o meu ingresso?",
+    "pergunta": "Onde fica o meu ingresso após a compra?",
+    "keywords": ["receber", "ingresso", "qr", "qrcode", "pdf", "email", "voucher", "e-ticket", "mostrar"],
+    "resposta": "Assim que o pagamento for aprovado, o seu **QR Code / E-Ticket** é enviado para o seu e-mail cadastrado. No dia do evento, basta apresentar a tela do celular na entrada."
+  },
+  {
+    "titulo": "👥 Posso passar o ingresso para outra pessoa?",
+    "pergunta": "Tem como transferir o ingresso para um amigo?",
+    "keywords": ["transferir", "passar", "outra pessoa", "amigo", "nome", "titularidade", "trocar nome"],
+    "resposta": "Sim! Você pode alterar o nome do titular do ingresso diretamente pela sua conta no site até **24 horas antes do início do evento**."
+  },
+  {
+    "titulo": "🔄 Cancelamento e Reembolso",
+    "pergunta": "Como faço para cancelar meu ingresso e pedir reembolso?",
+    "keywords": ["cancelar", "reembolso", "devolucao", "desistir", "trocar", "dinheiro"],
+    "resposta": "O cancelamento pode ser solicitado em até **7 dias após a compra** (segundo o CDC), desde que seja feito pelo menos 48h antes da data do evento."
+  },
+  {
+    "titulo": "👑 O que inclui o Passaporte VIP?",
+    "pergunta": "Quais são as vantagens do ingresso VIP?",
+    "keywords": ["vip", "passaporte", "camarote", "backstage", "vantagens", "experiencia"],
+    "resposta": "A **Experiência VIP** inclui: Acesso antecipado ao show, lugar no Front Stage, Credencial VIP com cordão K/DA, kit de brindes exclusivos e Acesso aos Previews dos novos lançamentos."
+  }
+]
