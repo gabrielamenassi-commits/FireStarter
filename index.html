@@ -13,9 +13,13 @@
     <!-- Arquivo CSS Externo -->
     <link rel="stylesheet" href="style.css">
 
-    <!-- Estilos Adicionais de Acessibilidade e Validação -->
+    <!-- Estilos de Acessibilidade, Validação e Unificação de Cores -->
     <style>
-        /* Melhoria de Contraste WCAG AA para Subtítulos */
+        /* Unificação da Cor Vermelho/Rosa (#FF4D8D) para Títulos e Subtítulos */
+        .title-large {
+            color: #FF4D8D !important;
+        }
+
         .subtitle-tag {
             color: #FF4D8D !important;
             text-shadow: 0 0 10px rgba(255, 77, 141, 0.4);
@@ -23,11 +27,15 @@
             letter-spacing: 1.5px;
         }
 
+        .card-back h3 {
+            color: #FF4D8D !important;
+        }
+
         /* Validação Visual de Formulário */
         .booking-form input:focus:invalid,
         .booking-form select:focus:invalid {
-            border-color: #ff2a6d !important;
-            box-shadow: 0 0 10px rgba(255, 42, 109, 0.5) !important;
+            border-color: #FF4D8D !important;
+            box-shadow: 0 0 10px rgba(255, 77, 141, 0.5) !important;
         }
 
         .booking-form input:valid {
@@ -35,7 +43,7 @@
         }
 
         .input-error-message {
-            color: #ff4d8d;
+            color: #FF4D8D;
             font-size: 0.85rem;
             margin-top: 4px;
             display: none;
@@ -232,7 +240,7 @@
                         <div class="ticket-item" onclick="selectTicket(this, 'CAMAROTE K/DA', '12x R$ 189')">
                             <div>
                                 <div class="ticket-title">CAMAROTE K/DA</div>
-                                <div class="ticket-sub">Visão privileged + Acesso à área VIP com bar exclusivo</div>
+                                <div class="ticket-sub">Visão privilegiada + Acesso à área VIP com bar exclusivo</div>
                             </div>
                             <div class="ticket-price">12x R$ 189</div>
                         </div>
@@ -316,7 +324,6 @@
             <div class="gallery-grid">
                 <a href="#img1" class="gallery-item"><img src="KdaFirestarter/red.jpg" alt="Cena do clipe oficial com luzes vermelhas" loading="lazy"></a>
                 <a href="#img2" class="gallery-item"><img src="KdaFirestarter/branco.jpg" alt="Show ao vivo sob holofotes" loading="lazy"></a>
-                <!-- LINHA 276 ATUALIZADA COM EVEFO.WEBP -->
                 <a href="#img3" class="gallery-item"><img src="KdaFirestarter/evefo.webp" alt="Rastro de Fogo" loading="lazy"></a>
                 <a href="#img4" class="gallery-item"><img src="KdaFirestarter/pose.jpg" alt="Close das integrantes do grupo" loading="lazy"></a>
             </div>
@@ -338,7 +345,6 @@
                 </div>
             </div>
 
-            <!-- LINHA 290 ATUALIZADA COM EVEFO.WEBP -->
             <div class="lightbox" id="img3">
                 <a href="#galeria" class="lightbox-overlay"></a>
                 <div class="lightbox-content">
