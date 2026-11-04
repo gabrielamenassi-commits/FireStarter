@@ -13,9 +13,8 @@
     <!-- Arquivo CSS Externo -->
     <link rel="stylesheet" href="style.css">
 
-    <!-- Estilos de Acessibilidade, Validação e Unificação de Cores -->
+    <!-- Estilos de Acessibilidade, Validação, Links e Banner Minimalista -->
     <style>
-        /* Unificação da Cor Vermelho/Rosa (#FF4D8D) para Títulos e Subtítulos */
         .title-large {
             color: #FF4D8D !important;
         }
@@ -31,6 +30,19 @@
             color: #FF4D8D !important;
         }
 
+        /* Estilo dos Links das Redes Sociais */
+        .info-value a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: color 0.3s ease, text-shadow 0.3s ease;
+        }
+
+        .info-value a:hover {
+            color: #00f0ff;
+            text-shadow: 0 0 8px rgba(0, 240, 255, 0.6);
+            text-decoration: underline;
+        }
+
         /* Validação Visual de Formulário */
         .booking-form input:focus:invalid,
         .booking-form select:focus:invalid {
@@ -42,11 +54,78 @@
             border-color: #05d9e8 !important;
         }
 
-        .input-error-message {
-            color: #FF4D8D;
-            font-size: 0.85rem;
-            margin-top: 4px;
-            display: none;
+        /* BANNER DE COOKIES (ESTILO CLEAN MINIMALISTA CONFORME SOLICITADO) */
+        .cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: #0a0a0a;
+            border-top: 1px solid #222;
+            padding: 16px 30px;
+            z-index: 999999;
+            box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.9);
+        }
+
+        .cookie-content {
+            max-width: 1180px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .cookie-content p {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 0.95rem;
+            color: #d1d1d1;
+            line-height: 1.4;
+            margin: 0;
+            font-weight: 500;
+        }
+
+        .cookie-content a {
+            color: #ffffff;
+            text-decoration: underline;
+            transition: color 0.2s ease;
+        }
+
+        .cookie-content a:hover {
+            color: #00f0ff;
+        }
+
+        .cookie-btn-single {
+            background: #ffffff;
+            color: #000000;
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 700;
+            font-size: 0.9rem;
+            padding: 8px 36px;
+            border-radius: 2px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            white-space: nowrap;
+        }
+
+        .cookie-btn-single:hover {
+            background: #00f0ff;
+            color: #000000;
+            box-shadow: 0 0 12px rgba(0, 240, 255, 0.5);
+        }
+
+        @media (max-width: 768px) {
+            .cookie-content {
+                flex-direction: column;
+                text-align: left;
+                gap: 15px;
+            }
+            .cookie-btn-single {
+                width: 100%;
+            }
         }
     </style>
 
@@ -301,8 +380,8 @@
             </div>
         </section>
 
-        <!-- SLIDESHOW CARROSSEL CONTÍNUO -->
-        <section style="padding: 60px 0; text-align: center;">
+        <!-- SLIDESHOW CARROSSEL CONTÍNUO (3ª FOTO CORRETA: EVEFO.WEBP) -->
+        <section id="galeria" style="padding: 60px 0; text-align: center;"></section>
             <span class="subtitle-tag">VISUAL FIRESTARTER</span>
             <h2 class="title-large">GALERIA <span>EM MOVIMENTO</span></h2>
             
@@ -310,7 +389,7 @@
                 <div class="slider-track">
                     <img class="slide-img" src="KdaFirestarter/red.jpg" alt="Visão panorâmica do palco iluminado em vermelho" loading="lazy">
                     <img class="slide-img" src="KdaFirestarter/branco.jpg" alt="Performance do K/DA sob luz branca intensa" loading="lazy">
-                    <img class="slide-img" src="KdaFirestarter/evefo.webp" alt="Integrantes do K/DA em fila na passarela do show" loading="lazy">
+                    <img class="slide-img" src="KdaFirestarter/evefo.webp" alt="Rastro de Fogo da Evelynn" loading="lazy">
                     <img class="slide-img" src="KdaFirestarter/pose.jpg" alt="Grupo K/DA reunido em pose no palco" loading="lazy">
                 </div>
             </div>
@@ -362,7 +441,7 @@
             </div>
         </section>
 
-        <!-- CONTATO E REDES SOCIAIS -->
+        <!-- CONTATO E REDES SOCIAIS COM LINKS CLICÁVEIS -->
         <section id="contato" class="section-split">
             <div class="split-content">
                 <span class="subtitle-tag">CANAIS OFICIAIS</span>
@@ -372,27 +451,39 @@
                 <div class="info-table">
                     <div class="info-row">
                         <div class="info-label">INSTAGRAM</div>
-                        <div class="info-value">@KDAMusic</div>
+                        <div class="info-value">
+                            <a href="https://www.instagram.com/leagueoflegendsbrasil/?hl=pt-br" target="_blank" rel="noopener noreferrer">@leagueoflegendsbrasil</a>
+                        </div>
                     </div>
                     <div class="info-row">
                         <div class="info-label">X (TWITTER)</div>
-                        <div class="info-value">@KDAMusic</div>
+                        <div class="info-value">
+                            <a href="https://x.com/LoLegendsBR" target="_blank" rel="noopener noreferrer">@LoLegendsBR</a>
+                        </div>
                     </div>
                     <div class="info-row">
                         <div class="info-label">TIKTOK</div>
-                        <div class="info-value">@KDA_official</div>
+                        <div class="info-value">
+                            <a href="https://www.tiktok.com/@leagueoflegendsbr" target="_blank" rel="noopener noreferrer">@leagueoflegendsBR</a>
+                        </div>
                     </div>
                     <div class="info-row">
                         <div class="info-label">YOUTUBE</div>
-                        <div class="info-value">/KDAMusic</div>
+                        <div class="info-value">
+                            <a href="https://www.youtube.com/leagueoflegends" target="_blank" rel="noopener noreferrer">@leagueoflegends</a>
+                        </div>
                     </div>
                     <div class="info-row">
                         <div class="info-label">SITE OFICIAL</div>
-                        <div class="info-value">KDA-MUSIC.COM</div>
+                        <div class="info-value">
+                            <a href="https://www.leagueoflegends.com/pt-br/event/kda-official-fan-club/" target="_blank" rel="noopener noreferrer">Fã-Clube Oficial K/DA</a>
+                        </div>
                     </div>
                     <div class="info-row">
                         <div class="info-label">CONTATO</div>
-                        <div class="info-value">contato@kda-music.com</div>
+                        <div class="info-value">
+                            <a href="https://support.riotgames.com/en-us/riot" target="_blank" rel="noopener noreferrer">Riot Games Support</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -403,13 +494,11 @@
 
     </div>
 
-    <!-- BANNER DE COOKIES (LGPD COMPLIANCE) -->
+    <!-- BANNER DE COOKIES (TEXTO EXATO + BOTÃO ÚNICO SEM EMOJI) -->
     <div id="cookie-banner" class="cookie-banner">
         <div class="cookie-content">
-            <p>🍪 Utilizamos cookies para personalizar conteúdos, analisar o tráfego de dados e otimizar sua experiência no site oficial do <strong>K/DA FIRESTARTER</strong>. Ao continuar navegando, você concorda com a nossa política de privacidade.</p>
-            <div class="cookie-buttons">
-                <button onclick="aceitarCookies()" class="btn-chrome cookie-btn">Aceitar e Continuar</button>
-            </div>
+            <p>Este site utiliza tecnologias como cookies para ativar funcionalidades essenciais do site, bem como para análise de dados, personalização e publicidade direcionada. <a href="https://support.riotgames.com/hc/pt-br/articles/201751844" target="_blank" rel="noopener noreferrer">Aviso de privacidade</a></p>
+            <button onclick="aceitarCookies()" class="cookie-btn-single">Aceitar</button>
         </div>
     </div>
 
@@ -457,6 +546,8 @@
         window.addEventListener('DOMContentLoaded', () => {
             if (localStorage.getItem('kda_cookie_consent') === 'accepted') {
                 document.getElementById('cookie-banner').style.display = 'none';
+            } else {
+                document.getElementById('cookie-banner').style.display = 'block';
             }
         });
     </script>
@@ -468,5 +559,6 @@
         jsonUrl: 'minha-base-dados.json'
       });
     </script>
+    
 </body>
 </html>
