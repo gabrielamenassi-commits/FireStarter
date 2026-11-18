@@ -735,3 +735,34 @@ a {
   transform: translateY(-4px) scale(1.15);
   filter: drop-shadow(0 0 14px rgba(255, 30, 150, 1));
 }
+/* 1. Início dos títulos principais mantém Audiowide */
+h1, h2 {
+  font-family: 'Audiowide', sans-serif;
+}
+
+/* 2. Continuação do título (ex: "PALCO MUNDIAL.") usa Orbitron */
+h1 span, h2 span, .titulo-destaque {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+}
+
+/* 3. Textos menores, subtítulos, tabelas e listas ficam na Rajdhani */
+body, p, li, td, th, h3, label, input, select, textarea {
+  font-family: 'Rajdhani', sans-serif;
+}
+
+/* Botões e caixas azuis clicáveis na fonte Rajdhani */
+button,
+.btn,
+.btn-primary,
+a.cta,
+input[type="submit"],
+.btn-chrome,
+a.btn-chrome,
+button.btn-chrome {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
