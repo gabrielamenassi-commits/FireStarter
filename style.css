@@ -657,3 +657,60 @@ a {
         text-align: center;
     }
 }
+/* ============================================================
+   COMPLEMENTO FASE 3: SELETOR ID, ESTADOS E RESPONSIVIDADE
+   ============================================================ */
+
+/* Seletor de ID (#) */
+#mentoras, #datas, #ingressos {
+    scroll-margin-top: 90px;
+}
+
+/* Estados interativos (:focus e :active) */
+.nav-menu a:focus,
+.btn-chrome:focus,
+.booking-form input:focus,
+.booking-form select:focus,
+.booking-form textarea:focus {
+    outline: 2px solid #00f0ff;
+    outline-offset: 2px;
+}
+
+.btn-chrome:active,
+.nav-menu a:active {
+    transform: scale(0.97);
+    opacity: 0.85;
+}
+
+/* Responsividade: Tablet (até 992px) */
+@media (max-width: 992px) {
+    .cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+/* Responsividade: Smartphone (até 600px) */
+@media (max-width: 600px) {
+    .header {
+        flex-direction: column;
+        gap: 10px;
+        padding: 12px 15px;
+    }
+
+    .nav-menu {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .cards-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tour-table th,
+    .tour-table td {
+        padding: 8px 6px;
+        font-size: 0.8rem;
+    }
+}
