@@ -5,7 +5,7 @@
   if (window.chatbotInicializado) return;
   window.chatbotInicializado = true;
 
-  // Remove qualquer emoji de textos vindos do JSON ou da base padrão
+  // Remove qualquer emoji caso algum arquivo JSON extra possua
   function removerEmojis(texto) {
     if (!texto) return "";
     return texto
@@ -42,8 +42,7 @@
       z-index: 99999999 !important;
     }
 
-    /* Botão flutuante com ícone de balão de conversa */
-   /* Botão flutuante com ícone de balão de conversa */
+    /* Botão flutuante com ícone de balão de conversa e contorno vermelho */
     #faq-toggle-btn {
       width: 62px !important;
       height: 62px !important;
@@ -418,54 +417,16 @@
     }
   `;
 
-  // 2. BASE DE DADOS PADRÃO (SEM EMOJIS)
-  const FAQ_PADRAO = [
-    {
-      titulo: "Classificação Etária",
-      keywords: ["idade", "menor", "classificacao", "anos", "pais", "acompanhado", "crianca"],
-      resposta: "A classificação etária é **18 anos**. Menores de 18 anos podem entrar acompanhados de pai, mãe ou responsável legal munido de autorização por escrito."
-    },
-    {
-      titulo: "Posso comprar na hora?",
-      keywords: ["hora", "na hora", "bilheteria", "comprar la", "local", "ingresso la", "fisica"],
-      resposta: "Haverá bilheteria no local **apenas se restarem ingressos**. Como a procura é alta, recomendamos garantir a sua credencial antecipada pelo site para não ficar de fora!"
-    },
-    {
-      titulo: "Posso levar comida e bebida?",
-      keywords: ["comida", "bebida", "alimento", "garrafa", "entrar com comida", "lanche", "agua"],
-      resposta: "É permitida a entrada de **água em garrafa plástica transparente (sem tampa)** e **alimentos industrializados lacrados** (ex: barras de cereal, biscoitos)."
-    },
-    {
-      titulo: "Como recebo o meu ingresso?",
-      keywords: ["receber", "ingresso", "qr", "qrcode", "pdf", "email", "voucher", "e-ticket", "mostrar"],
-      resposta: "Assim que o pagamento for aprovado, o seu **QR Code / E-Ticket** é enviado para o seu e-mail cadastrado. No dia do evento, basta apresentar a tela do celular na entrada."
-    },
-    {
-      titulo: "Posso passar para outra pessoa?",
-      keywords: ["transferir", "passar", "outra pessoa", "amigo", "nome", "titularidade", "trocar nome"],
-      resposta: "Sim! Você pode alterar o nome do titular do ingresso diretamente pela sua conta no site até **24 horas antes do início do evento**."
-    },
-    {
-      titulo: "Cancelamento e Reembolso",
-      keywords: ["cancelar", "reembolso", "devolucao", "desistir", "trocar", "dinheiro"],
-      resposta: "O cancelamento pode ser solicitado em até **7 dias após a compra** (segundo o CDC), desde que seja feito pelo menos 48h antes da data do evento."
-    },
-    {
-      titulo: "O que inclui o Passaporte VIP?",
-      keywords: ["vip", "passaporte", "camarote", "backstage", "vantagens", "experiencia"],
-      resposta: "A **Experiência VIP** inclui: Acesso antecipado ao show, lugar no Front Stage, Credencial VIP com cordão K/DA, kit de brindes exclusivos e acesso às mentorias."
-    }
-  ];
+  // A base de conhecimento agora vem 100% do arquivo minha-base-dados.json
+  let baseConhecimento = [];
 
-  let baseConhecimento = [...FAQ_PADRAO];
-
-  // 3. FUNÇÃO DE INICIALIZAÇÃO
+  // 2. FUNÇÃO DE INICIALIZAÇÃO
   window.initChatbot = function (opcoes = {}) {
     if (document.getElementById("faq-chatbot-widget")) return;
 
-    // CAMINHO DAS DUAS FOTOS NA PASTA KdaFirestarter
     const poroAtendente = opcoes.atendenteUrl || "KdaFirestarter/poro-atendente.png";
     const poroCliente = opcoes.clienteUrl || "KdaFirestarter/poro-cliente.png";
+    const arquivoJson = opcoes.jsonUrl || "minha-base-dados.json";
 
     const htmlTemplate = `
       <button id="faq-toggle-btn" type="button" aria-label="Abrir Assistente Poro K/DA">
@@ -570,9 +531,9 @@
       messagesBox.scrollTop = messagesBox.scrollHeight;
     }
 
-    function carregarMenuInicial() {
-      messagesBox.innerHTML = "";
-      addMessage("Oi! Eu sou o **Poro**, atendente da turnê K/DA Firestarter. Escolha um número abaixo ou digite sua dúvida:", "bot");
+    // Cria e exibe a lista numerada de perguntas do JSON
+    function renderizarOpcoes() {
+      if (!baseConhecimento.length) return;
 
       const optsContainer = document.createElement("div");
       optsContainer.className = "faq-options";
@@ -596,6 +557,12 @@
 
       messagesBox.appendChild(optsContainer);
       messagesBox.scrollTop = messagesBox.scrollHeight;
+    }
+
+    function carregarMenuInicial() {
+      messagesBox.innerHTML = "";
+      addMessage("Oi! Eu sou o **Poro**, atendente da turnê K/DA Firestarter. Escolha um número abaixo ou digite sua dúvida:", "bot");
+      renderizarOpcoes();
     }
 
     function normalizarTexto(txt) {
@@ -623,7 +590,7 @@
         const pergunta = normalizarTexto(item.titulo || item.pergunta || "");
         const resposta = normalizarTexto(item.resposta || "");
 
-        if (pergunta.includes(queryNorm)) pontos += 10;
+        if (pergunta.includes(queryNorm) && queryNorm.length > 2) pontos += 10;
 
         palavrasUsuario.forEach(palavra => {
           if (pergunta.includes(palavra)) pontos += 3;
@@ -644,7 +611,7 @@
       if (melhorMatch && maiorPontuacao >= 3) {
         return melhorMatch.resposta;
       }
-      return "Não encontrei essa informação por aqui. Tente digitar o número de uma das perguntas acima ou pergunte sobre idade, comida, bilheteria ou ingressos!";
+      return null;
     }
 
     function dispararEnvio() {
@@ -655,7 +622,13 @@
       input.value = "";
 
       setTimeout(() => {
-        addMessage(buscarResposta(txt), "bot");
+        const respostaEncontrada = buscarResposta(txt);
+        if (respostaEncontrada) {
+          addMessage(respostaEncontrada, "bot");
+        } else {
+          addMessage("Não compreendi. Selecione alguma pergunta da seleção abaixo ou digite o número correspondente:", "bot");
+          renderizarOpcoes();
+        }
       }, 280);
     }
 
@@ -688,17 +661,19 @@
       }
     }
 
-    if (opcoes.jsonUrl) {
-      fetch(opcoes.jsonUrl)
-        .then(res => res.json())
-        .then(dados => {
-          if (Array.isArray(dados)) {
-            baseConhecimento = [...dados];
-            carregarMenuInicial();
-          }
-        })
-        .catch(err => console.error("Erro ao carregar JSON:", err));
-    }
+    // Carrega as perguntas e respostas exclusivamente do arquivo JSON
+    fetch(arquivoJson)
+      .then(res => res.json())
+      .then(dados => {
+        if (Array.isArray(dados)) {
+          baseConhecimento = [...dados];
+          carregarMenuInicial();
+        }
+      })
+      .catch(err => {
+        console.error("Erro ao carregar base JSON:", err);
+        addMessage("Oi! Eu sou o **Poro**, atendente da turnê K/DA Firestarter. No momento não consegui carregar a lista de perguntas.", "bot");
+      });
 
     jsonFileInput.addEventListener("change", function (e) {
       const file = e.target.files[0];
@@ -730,7 +705,5 @@
         dispararEnvio();
       }
     });
-
-    carregarMenuInicial();
   };
 })();
