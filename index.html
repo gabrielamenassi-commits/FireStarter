@@ -206,7 +206,7 @@
         <article class="card-container">
             <div class="card-inner">
                 <div class="card-front">
-                    <img src="KdaFirestarter/ahri.jpg" alt="Retrato de Ahri, líder do K/DA" loading="lazy">
+                    <img src="KdaFirestarter/arlol.jpg" alt="Retrato de Ahri, líder do K/DA" loading="lazy">
                     <div class="card-front-title">AHRI</div>
                 </div>
                 <div class="card-back">
@@ -221,7 +221,7 @@
         <article class="card-container">
             <div class="card-inner">
                 <div class="card-front">
-                    <img src="KdaFirestarter/akali.jpg" alt="Retrato de Akali, rapper do K/DA" loading="lazy">
+                    <img src="KdaFirestarter/alol.jpg" alt="Retrato de Akali, rapper do K/DA" loading="lazy">
                     <div class="card-front-title">AKALI</div>
                 </div>
                 <div class="card-back">
@@ -236,7 +236,7 @@
         <article class="card-container">
             <div class="card-inner">
                 <div class="card-front">
-                    <img src="KdaFirestarter/evelynn.jpg" alt="Retrato de Evelynn, diva vocalista do K/DA" loading="lazy">
+                    <img src="KdaFirestarter/elol.jpg" alt="Retrato de Evelynn, diva vocalista do K/DA" loading="lazy">
                     <div class="card-front-title">EVELYNN</div>
                 </div>
                 <div class="card-back">
@@ -251,7 +251,7 @@
         <article class="card-container">
             <div class="card-inner">
                 <div class="card-front">
-                    <img src="KdaFirestarter/kaisa.jpg" alt="Retrato de Kai'Sa, dançarina do K/DA" loading="lazy">
+                    <img src="KdaFirestarter/klol.jpg" alt="Retrato de Kai'Sa, dançarina do K/DA" loading="lazy">
                     <div class="card-front-title">KAI'SA</div>
                 </div>
                 <div class="card-back">
@@ -506,6 +506,12 @@
     <!-- RODAPÉ -->
     <footer class="footer">
         <p>© 2026 K/DA MUSIC // FIRESTARTER TOUR. TODOS OS DIREITOS RESERVADOS.</p>
+        <div class="footer-simbolos">
+  <img src="KdaFirestarter/simboahri.jpg" alt="Emblema oficial da Ahri">
+  <img src="KdaFirestarter/akalisimbo.jpg" alt="Emblema oficial da Akali">
+  <img src="KdaFirestarter/simbevelynn.jpg" alt="Emblema oficial da Evelynn">
+  <img src="KdaFirestarter/kaisimbo.jpg" alt="Emblema oficial da Kai'Sa">
+</div>
     </footer>
 
     <!-- SCRIPTS DE INTERATIVIDADE DOS INGRESSOS E COOKIES -->
@@ -534,7 +540,7 @@
 
             const msgDiv = document.getElementById('mensagem-sucesso');
             msgDiv.style.display = 'block';
-            msgDiv.innerHTML = `✨ <strong>Sucesso, ${nome}!</strong> Confirmamos a reserva de <strong>${qtd}x ${tipo}</strong> para <strong>${cidade}</strong>. Os e-tickets foram enviados para <em>${email}</em>.`;
+            msgDiv.innerHTML = ` <strong>Sucesso, ${nome}!</strong> Confirmamos a reserva de <strong>${qtd}x ${tipo}</strong> para <strong>${cidade}</strong>. Os e-tickets foram enviados para <em>${email}</em>.`;
 
             form.reset();
         }
