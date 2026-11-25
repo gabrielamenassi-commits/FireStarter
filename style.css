@@ -766,3 +766,49 @@ button.btn-chrome {
   letter-spacing: 1px;
   text-transform: uppercase;
 }
+/* Aumenta a largura da primeira seção e dá mais espaço para o vídeo na direita */
+.section-split:first-of-type {
+  max-width: 1380px;
+  width: 94%;
+  margin-left: auto;
+  margin-right: auto;
+  gap: 36px;
+}
+
+.section-split:first-of-type .split-content {
+  flex: 1;
+}
+
+.section-split:first-of-type .split-visual {
+  flex: 1.45;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.hero-video-wrapper {
+  position: relative;
+  width: 100%;
+  min-width: 540px;
+  max-width: 740px;
+  aspect-ratio: 16 / 9;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 2.5px solid #ff007f;
+  box-shadow: 0 0 34px rgba(255, 0, 60, 0.65);
+  background: #000000;
+}
+
+.hero-video-wrapper iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+@media (max-width: 960px) {
+  .hero-video-wrapper {
+    min-width: 100%;
+    max-width: 100%;
+  }
+}
