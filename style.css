@@ -812,3 +812,47 @@ button.btn-chrome {
     max-width: 100%;
   }
 }
+/* Responsividade para Tablet e Celular */
+@media (max-width: 960px) {
+  .section-split:first-of-type {
+    flex-direction: column;
+    width: 92%;
+    padding-top: 24px;
+    gap: 28px;
+    text-align: center;
+  }
+
+  .section-split:first-of-type .split-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .section-split:first-of-type .split-visual {
+    width: 100%;
+    flex: none;
+    justify-content: center;
+  }
+
+  .hero-video-wrapper {
+    min-width: 0;
+    width: 100%;
+    max-width: 100%;
+    border-radius: 14px;
+    border-width: 2px;
+  }
+}
+
+/* Ajuste fino para telas de celular pequenas (até 480px) */
+@media (max-width: 480px) {
+  .section-split:first-of-type {
+    width: 94%;
+    gap: 20px;
+  }
+
+  .hero-video-wrapper {
+    border-radius: 12px;
+    box-shadow: 0 0 22px rgba(255, 0, 60, 0.55);
+  }
+}
