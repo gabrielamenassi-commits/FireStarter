@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>K/DA // FIRESTARTER – Loja Oficial &amp; Discografia</title>
+  <link rel="icon" href="KdaFirestarter/logo.webp" type="image/webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Orbitron:wght@700;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- CABEÇALHO -->
+  <header class="header">
+    <a href="index.html" class="logo" aria-label="Voltar para página inicial K/DA">
+      <img src="KdaFirestarter/logo.webp" alt="Logo K/DA" style="height: 36px; border-radius: 6px; object-fit: cover;">
+    </a>
+    <nav class="nav-menu">
+      <a href="index.html#sobre">Sobre</a>
+      <a href="index.html#mentoras">Integrantes</a>
+      <a href="index.html#turne">Datas</a>
+      <a href="index.html#ingressos">Ingressos</a>
+      <a href="loja.html">Loja</a>
+    </nav>
+    <a href="index.html#ingressos" class="btn-chrome">Garantir Pass</a>
+  </header>
+
+  <main class="loja-container">
+
+    <!-- CABEÇALHO DA LOJA -->
+    <div class="spotify-merch-header">
+      <div class="merch-artist-badge">
+        <img src="KdaFirestarter/avatar-kda.jpg" alt="Avatar K/DA" class="merch-avatar-grande">
+        <div>
+          <span class="subtitle-tag">MERCHANDISE OFICIAL DE</span>
+          <h1 class="title-large">K/DA <span>// FIRESTARTER</span></h1>
+        </div>
+      </div>
+      <span class="merch-count">1–7 DE 7 ITENS OFICIAIS</span>
+    </div>
+
+    <!-- VITRINE LIMPA (CLIQUE NO CARD PARA ABRIR O DETALHE COMPLETO) -->
+    <section class="merch-section" aria-label="Produtos Oficiais K/DA">
+      <div class="merch-grid" id="merch-grid"></div>
+    </section>
+
+   
+    <!-- SEÇÃO DISCOGRAFIA / PLAYER SPOTIFY -->
+    <section class="loja-spotify-section">
+      <div class="spotify-section-header">
+        <div>
+          <span class="subtitle-tag">OUÇA A ERA OFICIAL</span>
+          <h2 class="spotify-section-title">K/DA <span>// EP TRACKLIST</span></h2>
+        </div>
+        <div class="track-switcher">
+          <button type="button" class="track-btn active" data-track="https://open.spotify.com/embed/track/77uAqjyh3R6haTQMvhT1o6?utm_source=generator&theme=0">01. WATCH ME</button>
+          <button type="button" class="track-btn" data-track="https://open.spotify.com/embed/track/19avm7azJ241YYTttrmPHU?utm_source=generator&theme=0">02. NEVER GOING BACK</button>
+          <button type="button" class="track-btn" data-track="https://open.spotify.com/embed/track/6UeSC8jEhf9XmUL8EX2rni?utm_source=generator&theme=0">03. FIRESTARTER</button>
+          <button type="button" class="track-btn" data-track="https://open.spotify.com/embed/track/1MgC9pZde4R6zA86jgnYii?utm_source=generator&theme=0">04. GIRLS</button>
+        </div>
+      </div>
+
+      <div class="spotify-player-card">
+        <iframe
+          id="spotify-loja-iframe"
+          style="border-radius:14px"
+          src="https://open.spotify.com/embed/track/77uAqjyh3R6haTQMvhT1o6?utm_source=generator&theme=0"
+          width="100%"
+          height="152"
+          frameBorder="0"
+          allowfullscreen=""
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy">
+        </iframe>
+      </div>
+    </section>
+  </main>
+
+  <!-- MODAL DE DETALHES DO PRODUTO -->
+  <div id="produto-modal" class="produto-modal-overlay" aria-hidden="true">
+    <div class="produto-modal-box" role="dialog" aria-modal="true" aria-labelledby="modal-titulo">
+      <button type="button" class="modal-close-btn" id="modal-close-btn" aria-label="Fechar detalhes">✕</button>
+      
+      <div class="modal-grid">
+        <div class="modal-img-col">
+          <img id="modal-img" src="" alt="">
+        </div>
+
+        <div class="modal-info-col">
+          <h2 id="modal-titulo"></h2>
+          <div class="modal-artist-row">
+          <img src="KdaFirestarter/avatar-kda.jpg" alt="K/DA">
+            <span>K/DA // FIRESTARTER OFFICIAL STORE</span>
+          </div>
+
+          <p class="modal-desc-intro">
+            Desde 2018, o grupo virtual K/DA redefiniu o pop moderno em escala global, liderando paradas mundiais com <em>"POP/STARS"</em> e o EP <em>ALL OUT</em>. <strong>FIRESTARTER</strong> marca o retorno histórico após seis anos com MIYEON &amp; SOYEON (i-dle) como Ahri e Akali, ao lado de Sophie Powers como Evelynn e Mimi Webb como Kai'Sa.
+          </p>
+
+          <p id="modal-destaque" class="modal-destaque"></p>
+
+          <div class="modal-tracklist">
+            <strong>Track List:</strong>
+            <ul id="modal-tracks"></ul>
+          </div>
+
+          <p class="modal-limite">Limitado a 4 unidades por cliente.</p>
+
+         <div class="modal-buy-row">
+  <div class="modal-price-box">
+    <span class="modal-currency">BRL</span>
+    <span id="modal-preco" class="modal-preco"></span>
+  </div>
+  <button type="button" class="btn-chrome" id="modal-buy-btn">Comprar na Loja Oficial</button>
+</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NOTIFICAÇÃO DE CARRINHO -->
+  <div id="merch-toast" class="merch-toast" role="status" aria-live="polite"></div>
+
+  <!-- RODAPÉ -->
+  <footer class="footer">
+    <p>© 2026 K/DA MUSIC // FIRESTARTER TOUR. TODOS OS DIREITOS RESERVADOS.</p>
+    <div class="footer-simbolos">
+      <img src="KdaFirestarter/simboahri.jpg" alt="Emblema oficial da Ahri">
+      <img src="KdaFirestarter/akalisimbo.jpg" alt="Emblema oficial da Akali">
+      <img src="KdaFirestarter/simbevelynn.jpg" alt="Emblema oficial da Evelynn">
+      <img src="KdaFirestarter/kaisimbo.jpg" alt="Emblema oficial da Kai'Sa">
+    </div>
+  </footer>
+
+  
+  <!-- SCRIPTS -->
+  <script src="chatbot.js"></script>
+  <script>
+    window.initChatbot({
+      jsonUrl: "minha-base-dados.json",
+      atendenteUrl: "KdaFirestarter/poro-atendente.png",
+      clienteUrl: "KdaFirestarter/poro-cliente.png"
+    });
+
+    // BASE DE DADOS DOS 7 PRODUTOS OFICIAIS
+    const PRODUTOS_KDA = [
+      {
+        id: "box-set",
+        nome: "K/DA FIRESTARTER CD Box Set (BLADES Edition)",
+        preco: "R$ 349,90",
+        imgCard: "KdaFirestarter/boxd.png",
+        imgModal: "KdaFirestarter/boxd.png",
+        destaque: "Box Set edição limitada contendo o CD FIRESTARTER (BLADES Edition), todos os 4 photocards das integrantes, 4 broches exclusivos, pôster autografado, cartela de adesivos tokidoki | K/DA e cordão com pins.",
+        tracks: ["FIRESTARTER", "WATCH ME", "NEVER GOING BACK", "GIRLS (w/ DJ Sona)"]
+      },
+      {
+        id: "vinil",
+        nome: "K/DA FIRESTARTER 12\" Vinyl",
+        preco: "R$ 149,90",
+        imgCard: "KdaFirestarter/vinil.png",
+        imgModal: "KdaFirestarter/vinil.png",
+        destaque: "LP edição limitada de 12 polegadas prensado em vinil vermelho translúcido (BLADES red vinyl) a 33⅓ RPM.",
+        tracks: [
+          "Lado A: FIRESTARTER / WATCH ME / NEVER GOING BACK / GIRLS (w/ DJ Sona)",
+          "Lado B (Instrumentais): FIRESTARTER / WATCH ME / NEVER GOING BACK / GIRLS (w/ DJ Sona)"
+        ]
+      },
+      {
+        id: "cd-blades",
+        nome: "K/DA FIRESTARTER CD (BLADES Edition)",
+        preco: "R$ 89,90",
+        imgCard: "KdaFirestarter/cdall.png",
+        imgModal: "KdaFirestarter/cdall.png",
+        destaque: "CD edição limitada incluindo 1 de 4 photocards aleatórios das integrantes (Ahri, Akali, Evelynn ou Kai'Sa).",
+        tracks: ["FIRESTARTER", "WATCH ME", "NEVER GOING BACK", "GIRLS (w/ DJ Sona)"]
+      },
+      {
+        id: "cd-ahri",
+        nome: "K/DA FIRESTARTER CD (Ahri Edition)",
+        preco: "R$ 89,90",
+        imgCard: "KdaFirestarter/ahrd.png",
+        imgModal: "KdaFirestarter/ahrd.png",
+        destaque: "CD edição limitada individual incluindo photocard exclusivo da Ahri e assinatura metalizada na capa.",
+        tracks: ["FIRESTARTER", "WATCH ME", "NEVER GOING BACK", "GIRLS (w/ DJ Sona)"]
+      },
+      {
+        id: "cd-akali",
+        nome: "K/DA FIRESTARTER CD (Akali Edition)",
+        preco: "R$ 89,90",
+        imgCard: "KdaFirestarter/akd.png",
+        imgModal: "KdaFirestarter/akd.png",
+        destaque: "CD edição limitada individual incluindo photocard exclusivo da Akali e assinatura metalizada na capa.",
+        tracks: ["FIRESTARTER", "WATCH ME", "NEVER GOING BACK", "GIRLS (w/ DJ Sona)"]
+      },
+      {
+        id: "cd-evelynn",
+        nome: "K/DA FIRESTARTER CD (Evelynn Edition)",
+        preco: "R$ 89,90",
+        imgCard: "KdaFirestarter/ed.png",
+        imgModal: "KdaFirestarter/ed.png",
+        destaque: "CD edição limitada individual incluindo photocard exclusivo da Evelynn e assinatura metalizada na capa.",
+        tracks: ["FIRESTARTER", "WATCH ME", "NEVER GOING BACK", "GIRLS (w/ DJ Sona)"]
+      },
+      {
+        id: "cd-kaisa",
+        nome: "K/DA FIRESTARTER CD (Kai'Sa Edition)",
+        preco: "R$ 89,90",
+        imgCard: "KdaFirestarter/kaid.png",
+        imgModal: "KdaFirestarter/kaid.png",
+        destaque: "CD edição limitada individual incluindo photocard exclusivo da Kai'Sa e assinatura metalizada na capa.",
+        tracks: ["FIRESTARTER", "WATCH ME", "NEVER GOING BACK", "GIRLS (w/ DJ Sona)"]
+      }
+    ];
+
+    const grid = document.getElementById("merch-grid");
+    const modal = document.getElementById("produto-modal");
+    const closeBtn = document.getElementById("modal-close-btn");
+    let produtoAtual = null;
+
+    // Renderiza os cards limpos na vitrine
+    PRODUTOS_KDA.forEach(prod => {
+      const card = document.createElement("article");
+      card.className = "merch-card";
+      card.innerHTML = `
+        <div class="merch-img-box">
+          <img src="${prod.imgCard}" alt="${prod.nome}">
+        </div>
+        <div class="merch-body">
+          <h3>${prod.nome}</h3>
+          <span class="merch-price">${prod.preco}</span>
+        </div>
+      `;
+      card.addEventListener("click", () => abrirModal(prod));
+      grid.appendChild(card);
+    });
+
+    function abrirModal(prod) {
+      produtoAtual = prod;
+      document.getElementById("modal-img").src = prod.imgModal;
+      document.getElementById("modal-img").alt = prod.nome;
+      document.getElementById("modal-titulo").textContent = prod.nome;
+      document.getElementById("modal-destaque").textContent = prod.destaque;
+      document.getElementById("modal-preco").textContent = prod.preco;
+
+      const ul = document.getElementById("modal-tracks");
+      ul.innerHTML = "";
+      prod.tracks.forEach(t => {
+        const li = document.createElement("li");
+        li.textContent = t;
+        ul.appendChild(li);
+      });
+
+      modal.classList.add("open");
+      modal.setAttribute("aria-hidden", "false");
+    }
+
+    function fecharModal() {
+      modal.classList.remove("open");
+      modal.setAttribute("aria-hidden", "true");
+    }
+
+    closeBtn.addEventListener("click", fecharModal);
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) fecharModal();
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") fecharModal();
+    });
+
+   const SPOTIFY_MERCH_URL = "https://shop.spotify.com/pt/artist/4gOc8TsQed9eqnqJct2c5v/store";
+
+    document.getElementById("modal-buy-btn").addEventListener("click", () => {
+      if (!produtoAtual) return;
+      const toast = document.getElementById("merch-toast");
+      toast.innerHTML = `Redirecionando para o Spotify Merch oficial: <strong>${produtoAtual.nome}</strong>...`;
+      toast.classList.add("show");
+      fecharModal();
+
+      setTimeout(() => {
+        window.open(SPOTIFY_MERCH_URL, "_blank", "noopener,noreferrer");
+      }, 900);
+
+      setTimeout(() => {
+        toast.classList.remove("show");
+      }, 3600);
+    });
+    // SELETOR DE FAIXAS DO SPOTIFY NA LOJA
+    const trackButtons = document.querySelectorAll(".track-btn");
+    const spotifyIframe = document.getElementById("spotify-loja-iframe");
+
+    trackButtons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        trackButtons.forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+        spotifyIframe.src = btn.getAttribute("data-track");
+      });
+    });
+  </script>
+</body>
+</html>
